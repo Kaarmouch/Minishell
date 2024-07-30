@@ -20,10 +20,9 @@ void	init_env(t_env **env, char **ev)
 	cpy_env = ev;
 	while (*cpy_env)
 	{
-		printf("%s\n", *cpy_env);
 		tmp = ft_split(*cpy_env, '=');
 		ft_lstadd_back(env, ft_lstnew(tmp[0], tmp[1]));
-		ft_free_spit(tmp);
+		ft_free_split(tmp);
 		cpy_env++;
 	}
 }

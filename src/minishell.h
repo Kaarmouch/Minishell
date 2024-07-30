@@ -1,17 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aglampor <aglampor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/07 15:38:59 by aglampor          #+#    #+#             */
+/*   Updated: 2019/10/11 18:07:44 by aglampor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
 # include <stdio.h>
 # include <unistd.h>
 
+#include <stdlib.h>
 typedef struct	s_environement
 {
 	char	*key;
 	char	*value;
-	struct	*s_environement;
+	struct	s_environement *next;
 }		t_env;
 
-
+int     ft_cmp(char *o, char *t);
+void	ft_lstadd_back(t_env **alst, t_env *new);
+t_env	*ft_lstnew(char *key, char *value);
+char    *ft_strdup(char *str);
+t_env   *ft_lstlast(t_env *lst);
+void    ft_delnode_key(t_env **lst, char *key );
 void	init_env(t_env **env, char **ev);
 void	ft_free_split(char **split);
 char	**ft_split(char *s, char c);

@@ -9,7 +9,7 @@
 /*   Updated: 2021/02/15 15:47:04 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pipex.h"
+#include "minishell.h"
 
 int	ft_strlen(char *s)
 {
@@ -21,7 +21,7 @@ int	ft_strlen(char *s)
 	return (l);
 }
 
-void    *ft_free_split(char **split);
+void    ft_free_split(char **split)
 {
 	int	i;
 	
