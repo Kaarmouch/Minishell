@@ -10,6 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "minishell.h"
+#include <stdio.h>
+
+static void print_env(t_env *env_list)
+{
+    t_env *current = env_list;
+
+    while (current != NULL)
+    {
+        printf("Key: %s, Value: %s\n", current->key, current->value);
+        current = current->next;
+    }
+}
+
 
 int		main(int ac, char **av, char **ev)
 {
@@ -19,5 +32,7 @@ int		main(int ac, char **av, char **ev)
 	(void)av;
 	env = NULL;
 	init_env(&env, ev);
+	print_env(env);	
+	free_env(env);
 	return (0);
 }

@@ -30,6 +30,7 @@ void	ft_lstadd_back(t_env **alst, t_env *new);
 t_env	*ft_lstnew(char *key, char *value);
 char    *ft_strdup(char *str);
 t_env   *ft_lstlast(t_env *lst);
+void	free_env(t_env	*p);
 void    ft_delnode_key(t_env **lst, char *key );
 void	init_env(t_env **env, char **ev);
 void	ft_free_split(char **split);
