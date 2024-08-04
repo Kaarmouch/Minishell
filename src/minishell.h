@@ -6,7 +6,7 @@
 /*   By: aglampor <aglampor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:38:59 by aglampor          #+#    #+#             */
-/*   Updated: 2019/10/11 18:07:44 by aglampor         ###   ########.fr       */
+/*   Updated: 2024/08/04 16:33:48 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <unistd.h>
 
+#include <readline/readline.h>
 #include <stdlib.h>
 typedef struct	s_environement
 {
@@ -29,6 +30,7 @@ int     ft_cmp(char *o, char *t);
 void	ft_lstadd_back(t_env **alst, t_env *new);
 t_env	*ft_lstnew(char *key, char *value);
 char    *ft_strdup(char *str);
+char    *word_dup(char *str, int start, int finish);
 t_env   *ft_lstlast(t_env *lst);
 void	free_env(t_env	*p);
 void    ft_delnode_key(t_env **lst, char *key );

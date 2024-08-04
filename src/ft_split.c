@@ -6,7 +6,7 @@
 /*   By: aglampor <aglampor@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by aglampor          #+#    #+#             */
-/*   Updated: 2021/02/15 15:47:04 by aglampor         ###   ########.fr       */
+/*   Updated: 2024/08/04 16:21:36 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "minishell.h"
@@ -55,7 +55,7 @@ static int	count_words(char *str, char c)
 	return (i);
 }
 
-static char	*word_dup(char *str, int start, int finish)
+char	*word_dup(char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
