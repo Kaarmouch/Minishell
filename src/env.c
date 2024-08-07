@@ -6,7 +6,7 @@
 /*   By: aglampor <aglampor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:38:59 by aglampor          #+#    #+#             */
-/*   Updated: 2019/10/11 18:07:44 by aglampor         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:45:57 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	init_env(t_env **env, char **ev)
 	while (*cpy_env)
 	{
 		tmp = ft_split(*cpy_env, '=');
-		printf("CPY %s\n", *cpy_env);
 		ft_lstadd_back(env, ft_lstnew(tmp[0], tmp[1]));
 		ft_free_split(tmp);
 		cpy_env++;

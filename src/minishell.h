@@ -6,7 +6,7 @@
 /*   By: aglampor <aglampor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:38:59 by aglampor          #+#    #+#             */
-/*   Updated: 2024/08/04 16:33:48 by aglampor         ###   ########.fr       */
+/*   Updated: 2024/08/07 20:04:36 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int     ft_cmp(char *o, char *t);
 void	ft_lstadd_back(t_env **alst, t_env *new);
 t_env	*ft_lstnew(char *key, char *value);
 char    *ft_strdup(char *str);
+char	**splt_white(char *s);
 char    *word_dup(char *str, int start, int finish);
 t_env   *ft_lstlast(t_env *lst);
 void	free_env(t_env	*p);
