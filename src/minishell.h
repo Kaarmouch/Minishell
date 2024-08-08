@@ -6,7 +6,7 @@
 /*   By: aglampor <aglampor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:38:59 by aglampor          #+#    #+#             */
-/*   Updated: 2024/08/07 20:04:36 by aglampor         ###   ########.fr       */
+/*   Updated: 2024/08/08 14:05:36 by aglampor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 
 #include <readline/readline.h>
 #include <stdlib.h>
+
+typedef struct	s_token
+{
+	char	*value;
+	int		type;
+	struct	s_tocken	*next;
+}		t_token;
+
 typedef struct	s_environement
 {
 	char	*key;

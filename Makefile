@@ -6,7 +6,7 @@
 #    By: aglampor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 15:05:19 by aglampor          #+#    #+#              #
-#    Updated: 2024/08/07 20:39:25 by aglampor         ###   ########.fr        #
+#    Updated: 2024/08/08 22:32:29 by aglampor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = minishell
@@ -15,7 +15,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -g
 
-LDFLAGS = -lreadline
+LDFLAGS = -lreadline -Llibft -lft
 
 SRC_DIR = src/
 
@@ -25,8 +25,13 @@ SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
+LIBFT = libft/libft.a
+
+$(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LDFLAGS)
+
+$(LIBFT):
+	$(MAKE) -C libft
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -35,8 +40,10 @@ all: $(NAME)
 
 clean:
 	rm -f $(OBJ)
+	$(MAKE) -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -C libft fclean
 
 re: fclean all
